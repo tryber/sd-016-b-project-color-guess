@@ -24,13 +24,14 @@ function pGenerate() {
 function onLoad() {
   colorizeTheDivs();
   pGenerate();
+  document.getElementById('answer').innerHTML = 'Escolha uma cor';
 }
 window.onload = onLoad;
 
 function match(event) {
   const p = document.getElementById('rgb-color').innerText;
   const eventTarget = event.target;
-  const h2 = document.getElementById('answer')
+  const h2 = document.getElementById('answer');
   if (eventTarget.style.backgroundColor === p) {
     h2.innerHTML = 'Acertou!';
   } else {
@@ -41,3 +42,6 @@ function match(event) {
 for (let index = 0; index < ballClass.length; index += 1) {
   ballClass[index].addEventListener('click', match);
 }
+
+const resetButton = document.getElementById('reset-game')
+resetButton.addEventListener('click', onLoad);
