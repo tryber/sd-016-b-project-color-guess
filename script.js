@@ -1,25 +1,61 @@
-let rightColor = '';
+let rightColorRGB = '';
+const colors = [];
+
+function convertToHex(num) {
+  const hex1 = parseInt(Math.trunc(num / 16), 10).toString(16);
+  const hex2 = parseInt(((num / 16) - parseInt(hex1, 16)) * 16, 10).toString(16);
+  return hex1 + hex2;
+}
+
+// https://www.developintelligence.com/blog/2017/02/rgb-to-hex-understanding-the-major-web-color-codes/
+// https://reactgo.com/javascript-convert-decimals/
+function rgbToHex(r, g, b) {
+  const hexR = convertToHex(r);
+  const hexG = convertToHex(g);
+  const hexB = convertToHex(b);
+  return `#${hexR}${hexG}${hexB}`;
+}
 
 function getRandomNumberUpTo(max) {
   return Math.ceil(Math.random() * max);
 }
 
 function generateNewColorCode() {
-  return `(
-    ${getRandomNumberUpTo(255)},
-    ${getRandomNumberUpTo(255)},
-    ${getRandomNumberUpTo(255)}
-    )`.replace(/\s/g, '');
+  const r = getRandomNumberUpTo(255);
+  const g = getRandomNumberUpTo(255);
+  const b = getRandomNumberUpTo(255);
+  let newColorRGB = `(${r},${g},${b})`;
+  if (newColorRGB === rightColorRGB) newColorRGB = generateNewColorCode();
+  const newColorHex = rgbToHex(r, g, b);
+  colors.push(newColorHex);
+  return newColorRGB;
 }
 
 function getNewColor() {
   const rgbColor = document.getElementById('rgb-color');
-  const rightColorCode = generateNewColorCode();
-  rightColor = `rgb${rightColorCode}`;
-  console.log(rightColor);
-  rgbColor.innerText = rightColorCode;
+  rightColorRGB = generateNewColorCode();
+  rgbColor.innerText = rightColorRGB;
+}
+
+function populateColorsArray(max) {
+  for (let i = 1; i <= max; i += 1) {
+    generateNewColorCode();
+  }
+  colors.sort();
+}
+
+function createBalls(max) {
+  const ballsContainer = document.getElementById('balls-container');
+  populateColorsArray(max - 1);
+  for (let i = 0; i < max; i += 1) {
+    const newBall = document.createElement('div');
+    newBall.classList.add('ball');
+    newBall.style.backgroundColor = colors[i];
+    ballsContainer.append(newBall);
+  }
 }
 
 window.onload = () => {
   getNewColor();
+  createBalls(6);
 };
