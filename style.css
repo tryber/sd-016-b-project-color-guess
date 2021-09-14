@@ -46,3 +46,9 @@ h3 {
     font-size: 25px;
     font-family: Lato, sans-serif;
 }
+
+#score {
+    font-size: 25px;
+    text-align: center;
+    font-family: Lato, sans-serif;
+}

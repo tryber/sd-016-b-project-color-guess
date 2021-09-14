@@ -6,6 +6,10 @@ const resetButton = document.querySelector('#reset-game');
 let winnerColor = document.querySelector('#rgb-color')
 const ballContainer = document.querySelector('#ball-container');
 const gameFeedBack = document.querySelector('#answer')
+const scoreBoardContainer = document.querySelector('#scoreboard-container');
+const scoreBoard = document.querySelector('#score')
+
+scoreBoard.html = 0;
 
 function colorGenerator () {
     let randomColor1 = Math.floor(Math.random() * 255) + 1;
@@ -33,7 +37,7 @@ function setWinnerText () {
 setWinnerText();
 
 function setColors() {
-    let winner = Math.floor(Math.random() * 6) + 1;
+    let winner = Math.floor(Math.random() * 6);
     for (let i = 0; i < 6; i++) {
         if (i === winner) {
             ballContainer.children[i].style.backgroundColor = `rgb${winnerColor.innerText}`
@@ -51,6 +55,7 @@ function selectBall () {
         balls[i].addEventListener('click', function(event){
             if (event.target.classList.contains('winner')) {
                 gameFeedBack.innerText = 'Acertou!';
+                
             } else if (event.target.className !== 'winner') {
                 gameFeedBack.innerText = 'Errou! Tente novamente!'
             }
@@ -59,10 +64,16 @@ function selectBall () {
 }
 selectBall();
 
-function resetGame () {
-    setWinnerText();
-    setColors();
-    selectBall();
+function resetGame() {
+    window.location.reload();
+}
+resetButton.addEventListener('click', resetGame);
+
+function saveStorage () {
+    let savedItem = scoreBoard.innerHTML;
+    sessionStorage.setItem('score', savedItem)
 }
 
-resetButton.addEventListener('click', resetGame);
+window.onload = function() {
+    scoreBoard.innerHTML = sessionStorage.getItem('score');
+}
