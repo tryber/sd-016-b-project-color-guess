@@ -8,19 +8,28 @@
   <title>Color Guess</title>
 </head>
 <body>
-  <h1 id="title">Adivinhe a Cor</h1>
-  <p id="rgb-color"></p>
-  <p>Placar: <span id="score">0</span></p>
-  <div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
-    <div class="ball"></div>
+  <div id="container">
+    <h1 id="title">Adivinhe a Cor!</h1>
+    <p id="rgb-color"></p>
+    <div id="placar-container">
+      <p class="score-p">Placar: <span id="score">0</span></p>
+      <p class="score-p">Erros: <span id="error">0</span></p>
+    </div>
+    <div id="balls-bg">
+      <div class="balls-container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </div>
+      <div class="balls-container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </div>
+    </div>
+    <p id="answer">Escolha uma cor!</p>
+    <button id="reset-game">Reiniciar o Jogo</button>
   </div>
-  <p id="answer">Escolha uma cor!</p>
-  <button id="reset-game">Reiniciar o Jogo</button>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,7 +3,9 @@ const colorToGuess = document.getElementById('rgb-color');
 const answerText = document.getElementById('answer');
 const resetGameButton = document.getElementById('reset-game');
 const score = document.getElementById('score');
+const error = document.getElementById('error');
 let counter = 0;
+let counterError = 0;
 
 function randomColor() {
   const r = parseInt(Math.random() * 255, 10);
@@ -44,6 +46,8 @@ function checkCorrectBall(e) {
     score.innerText = counter;
   } else if (checkClickedElement !== checkRightColor) {
     answerText.innerText = 'Errou! Tente novamente!';
+    counterError += 3;
+    error.innerText = counterError;
   }
 }
 
