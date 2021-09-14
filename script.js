@@ -24,7 +24,7 @@ function generateNewColorCode() {
   const r = getRandomNumberUpTo(255);
   const g = getRandomNumberUpTo(255);
   const b = getRandomNumberUpTo(255);
-  let newColorRGB = `(${r},${g},${b})`;
+  let newColorRGB = `(${r}, ${g}, ${b})`;
   if (newColorRGB === rightColorRGB) newColorRGB = generateNewColorCode();
   const newColorHex = rgbToHex(r, g, b);
   colors.push(newColorHex);
@@ -44,6 +44,15 @@ function populateColorsArray(max) {
   colors.sort();
 }
 
+function checkAnswer(evt) {
+  const answer = document.getElementById('answer');
+  if (evt.target.style.backgroundColor === `rgb${rightColorRGB}`) {
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
 function createBalls(max) {
   const ballsContainer = document.getElementById('balls-container');
   populateColorsArray(max - 1);
@@ -51,6 +60,7 @@ function createBalls(max) {
     const newBall = document.createElement('div');
     newBall.classList.add('ball');
     newBall.style.backgroundColor = colors[i];
+    newBall.addEventListener('click', checkAnswer);
     ballsContainer.append(newBall);
   }
 }
