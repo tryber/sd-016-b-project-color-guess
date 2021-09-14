@@ -1,9 +1,9 @@
 const user = {
   randomColor: [],
   rightColor: '',
+  choseColor: '',
   starting: true,
-  hit: false,
-  points: 0,
+  score: 0,
 }
 
 const aswer = getOne('#answer'),
@@ -50,6 +50,24 @@ function getRightColor() {
   rightColor.innerText = user.rightColor;
 }
 
+function saveChoseColor(event) {
+  user.choseColor = event.target.style.backgroundColor;
+}
+
+function checkAnswer() {
+  return (user.rightColor === user.choseColor) ? user.score += 3 : user.score -= 1;
+}
+
+function bubbleBalls(event) {
+  saveChoseColor(event);
+  checkAnswer();
+}
+
+function interactColors() {
+  const balls = getAllBalls();
+  addMultiplesListeners(balls, 'click', bubbleBalls);
+}
+
 function startingGame() {
   generateRandomColors();
   coloringBalls();
@@ -59,5 +77,6 @@ function startingGame() {
 }
 
 window.onload = () => {
-  // startingGame();
+  startingGame();
+  interactColors();
 }
