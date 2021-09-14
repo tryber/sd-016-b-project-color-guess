@@ -6,7 +6,8 @@ const user = {
   points: 0,
 }
 
-const aswer = getOne('#answer');
+const aswer = getOne('#answer'),
+      rightColor = getOne('#rgb-color');
 
 function randomizeColors() {
   return Math.floor(Math.random() * 255);
@@ -45,10 +46,16 @@ function getAswer() {
   }
 }
 
+function getRightColor() {
+  rightColor.innerText = user.rightColor;
+}
+
 function startingGame() {
   generateRandomColors();
   coloringBalls();
+  selectRightColor();
   getAswer();
+  getRightColor();
 }
 
 window.onload = () => {
