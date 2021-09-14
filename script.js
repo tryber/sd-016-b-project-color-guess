@@ -48,6 +48,8 @@ function checkAnswer(evt) {
   const answer = document.getElementById('answer');
   if (evt.target.style.backgroundColor === `rgb${rightColorRGB}`) {
     answer.innerText = 'Acertou!';
+    const score = document.getElementById('score');
+    score.innerText = parseInt(score.innerText, 10) + 3;
   } else {
     answer.innerText = 'Errou! Tente novamente!';
   }
