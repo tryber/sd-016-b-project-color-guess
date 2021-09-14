@@ -8,13 +8,15 @@ const user = {
 
 const aswer = getOne('#answer'),
       rightColor = getOne('#rgb-color'),
-      score = getOne('#score');
+      score = getOne('#score'),
+      reset = getOne('#reset-game');
 
 function randomizeColors() {
   return Math.floor(Math.random() * 255);
 }
 
 function generateRandomColors() {
+  user.randomColor.splice(0, user.randomColor.length);
   for (let i = 0; i < 6; i += 1) {
     user.randomColor.push(`rgb(${randomizeColors()}, ${randomizeColors()}, ${randomizeColors()})`);
   }
@@ -83,7 +85,8 @@ function interactColors() {
   addMultiplesListeners(balls, 'click', bubbleBalls);
 }
 
-function startingGame() {
+function resetGame() {
+  user.starting = true;
   generateRandomColors();
   coloringBalls();
   selectRightColor();
@@ -91,7 +94,16 @@ function startingGame() {
   getRightColor();
 }
 
+function buttonReset() {
+  reset.addEventListener('click', resetGame);
+}
+
 window.onload = () => {
-  startingGame();
+  generateRandomColors();
+  coloringBalls();
+  selectRightColor();
+  getAswer();
+  getRightColor();
   interactColors();
+  buttonReset();
 }
