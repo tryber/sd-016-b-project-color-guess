@@ -9,6 +9,8 @@ let rgbColor = document.querySelector('#rgb-color');
 let question  = null;
 let resposta = document.querySelector('#answer');
 const getResetButton = document.querySelector('#reset-game');
+let contador = 0;
+let getScore = document.querySelector('#score');
 
 function gerateColor() { // retirado a base da informação para gerar a cor aleatória do site https://www.codegrepper.com/code-examples/javascript/generate+random+rgb+color+javascript; usado no projeto pixels art também;
   function n() {
@@ -33,6 +35,10 @@ function addQuestion (){
 }
 window.onload = function () {
 addQuestion();
+if (JSON.parse(localStorage.getItem('contador')) !== null){
+startPage();
+}
+placar();
 }
 
 
@@ -62,6 +68,9 @@ getColors.addEventListener('click', function (event){
   let answer = removeRgb(event.target.style.backgroundColor);
   if (answer === rgbColor.innerHTML){
     resposta.innerHTML = 'Acertou!';
+    contador = contador + 3;
+    saveLocalStorage();
+    placar();
   } else {
     resposta.innerHTML = 'Errou! Tente novamente!';
   }
@@ -70,3 +79,16 @@ getColors.addEventListener('click', function (event){
 getResetButton.addEventListener('click', function () {
 location.reload(); // recarrega a página retirado do site https://developer.mozilla.org/pt-BR/docs/Web/API/Location/reload
 });
+
+function placar (){
+getScore.innerHTML = 'Placar: ' + contador;
+}
+
+function saveLocalStorage() {
+  localStorage.setItem('contador', JSON.stringify(contador));
+}
+
+function startPage() {
+  let inicio = JSON.parse(localStorage.getItem('contador'));
+  contador = inicio;
+}
