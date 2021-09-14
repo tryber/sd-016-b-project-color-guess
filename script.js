@@ -13,3 +13,19 @@ let ballIndex = Math.round(Math.random() * 5);
 let colorToGuess = window.getComputedStyle(balls[ballIndex]).getPropertyValue('background-color');
 
 rgbColor.innerText = colorToGuess;
+
+let answer = document.getElementById('answer');
+
+function guessColor(event) {
+  let ballColor = window.getComputedStyle(event.target).getPropertyValue('background-color');
+
+  if (rgbColor.innerText === ballColor) {
+    answer.innerText = 'Acertou!';
+  } else {
+    answer.innerText = 'Errou! Tente novamente!';
+  }
+}
+
+for (let index = 0; index < balls.length; index += 1) {
+  balls[index].addEventListener('click', guessColor);
+}
