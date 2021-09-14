@@ -52,10 +52,14 @@ function compareteAnswer(event) {
   let rgbCircle = `(${rgbSlipted[0]}, ${rgbSlipted[1]}, ${rgbSlipted[2]})`;
   if(rgbCircle === question) {
     contador += 3
-   answerParagraph.innerHTML = 'Acertou!';
-   score.innerText = `Placar: ${contador}`
+    answerParagraph.innerHTML = 'Acertou!';
+    score.innerText = `Placar: ${contador}`;
+    generateColors();
+    generateAnswer();
   } else {
     answerParagraph.innerHTML = 'Errou! Tente novamente!!';
+    generateColors();
+    generateAnswer();
   }
 }
 
