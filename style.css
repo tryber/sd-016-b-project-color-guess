@@ -1,4 +1,5 @@
-.color {
+.ball {
+  border-radius: 100%;
   display: inline-flex;
   margin: 10px;
   height: 40px;
