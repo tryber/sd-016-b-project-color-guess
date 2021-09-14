@@ -1,6 +1,7 @@
 const balls = document.getElementsByClassName('ball');
 const colorToGuess = document.getElementById('rgb-color');
 const answerText = document.getElementById('answer');
+const resetGameButton = document.getElementById('reset-game');
 
 function randomColor() {
   const r = parseInt(Math.random() * 255, 10);
@@ -40,6 +41,14 @@ function addEventToBalls() {
   }
 }
 addEventToBalls();
+
+function resetGame() {
+  addBallsColor();
+  sortColor();
+  answerText.innerText = 'Escolha uma cor!';
+}
+
+resetGameButton.addEventListener('click', resetGame);
 
 /* Referências:
 Gerar cor aleatória:
