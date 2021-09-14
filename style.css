@@ -3,7 +3,7 @@ header {
   margin-top: 4%;
 }
 
-main {
+section {
   display: flex;
   justify-content: center;
   margin-top: 2%;
@@ -17,3 +17,10 @@ main {
   height: 80px;
   margin: 7px;
 }
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+
