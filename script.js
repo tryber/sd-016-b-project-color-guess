@@ -1,15 +1,29 @@
+function getOne(element) {
+  return document.querySelector(element);
+}
+
+function getAll(element) {
+  return document.querySelectorAll(element);
+}
+
+function addMultiplesListeners(arr, eventName, listener) {
+  arr.forEach((element) => {
+    element.addEventListener(eventName, listener, false);
+  });
+}
+
 const user = {
   randomColor: [],
   rightColor: '',
   choseColor: '',
   starting: true,
   score: 0,
-}
+};
 
-const aswer = getOne('#answer'),
-      rightColor = getOne('#rgb-color'),
-      score = getOne('#score'),
-      reset = getOne('#reset-game');
+const aswer = getOne('#answer');
+const rightColor = getOne('#rgb-color');
+const score = getOne('#score');
+const reset = getOne('#reset-game');
 
 function randomizeColors() {
   return Math.floor(Math.random() * 255);
@@ -30,7 +44,8 @@ function coloringBalls() {
   const balls = getAllBalls();
 
   balls.forEach((ball, i) => {
-    ball.style.backgroundColor = user.randomColor[i];
+    const elementBall = ball.style;
+    elementBall.backgroundColor = user.randomColor[i];
   });
 }
 
@@ -41,15 +56,17 @@ function selectRightColor() {
 }
 
 function getAswer() {
-  const possibleAnswers = ['Escolha uma cor', 'Acertou!', 'Errou! Tente novamente'];
+  const startAnswer = 'Escolha uma cor';
+  const rightAnswer = 'Acertou!';
+  const wrongAnswer = 'Errou! Tente novamente';
 
   if (user.starting) {
-    aswer.innerText = possibleAnswers[0];
+    aswer.innerText = startAnswer;
     user.starting = false;
   } else if (user.rightColor === user.choseColor) {
-    aswer.innerText = possibleAnswers[1];
+    aswer.innerText = rightAnswer;
   } else {
-    aswer.innerText = possibleAnswers[2];
+    aswer.innerText = wrongAnswer;
   }
 }
 
@@ -65,12 +82,16 @@ function checkAnswer() {
   if (user.rightColor === user.choseColor) {
     user.score += 3;
   } else if (user.score > 0) {
-    user.score -= 1
+    user.score -= 1;
   }
 }
 
 function setScore() {
-  user.score < 0 ? score.innerText = 0 : score.innerText = user.score;
+  if (user.score < 0) {
+    score.innerText = 0;
+  } else {
+    score.innerText = user.score;
+  }
 }
 
 function bubbleBalls(event) {
@@ -106,4 +127,4 @@ window.onload = () => {
   getRightColor();
   interactColors();
   buttonReset();
-}
+};
