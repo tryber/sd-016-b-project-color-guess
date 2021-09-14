@@ -1,11 +1,15 @@
 const colorCircle = document.getElementsByClassName('ball')
 const colorCircleContainer = document.getElementById('colors-option-container')
-const randomizeColorButton = document.getElementById('randomizeColor')
+const resetGameButton = document.getElementById('reset-game')
 const rgbQuestion = document.getElementById('rgb-color')
 const answerParagraph = document.getElementById('answer')
 
-randomizeColorButton.addEventListener('click', generateColors)
+resetGameButton.addEventListener('click', resetGame)
 colorCircleContainer.addEventListener('click', compareteAnswer)
+
+function resetText() {
+  answerParagraph.innerHTML = 'Escolha uma cor'
+}
 
 function randomRGB() {
   let numero = Math.ceil(Math.random() * 255)
@@ -48,6 +52,12 @@ function compareteAnswer(event) {
   } else {
     answerParagraph.innerHTML = 'Errou! Tente novamente!!'
   }
+}
+
+function resetGame() {
+  resetText()
+  generateColors()
+  generateAnswer()
 }
 
 window.onload = () => {
