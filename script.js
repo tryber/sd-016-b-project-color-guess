@@ -24,6 +24,8 @@ function generateBalls() {
 
 function putColors() {
   let selected = parseInt(Math.random() * 6);
+  console.log(selected);
+
   for (let index = 0; index < 6; index++) {
     if (index == selected) {
       balls.children[index].style.backgroundColor = 'rgb' + rgb.innerText;
@@ -42,10 +44,20 @@ circles.addEventListener('click', function(event) {
   } else feedback.innerText = 'Errou! Tente novamente!';
 })
 
-botaoReset.addEventListener('click', function() {
+
+function reset() {
   rgb.innerText = generateColor();
+  for (let index = 0; index < 6; index++) {
+    balls.children[index].id = '';
+  }
   putColors();
-  feedback.innerText = 'Escolha uma cor'
+  feedback.innerText = 'Escolha uma cor';
+}
+
+
+
+botaoReset.addEventListener('click', function() {
+  reset();
 })
 
 window.onload = function() {

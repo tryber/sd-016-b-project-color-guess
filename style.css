@@ -16,7 +16,7 @@ body {
 }
 
 #placar,
-#pontos {
+#score {
   display: inline-block;
   margin-top: 0;
 }
