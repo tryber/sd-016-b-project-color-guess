@@ -8,6 +8,7 @@ const getColors = document.querySelector('#colors');
 let rgbColor = document.querySelector('#rgb-color');
 let question  = null;
 let resposta = document.querySelector('#answer');
+const getResetButton = document.querySelector('#reset-game');
 
 function gerateColor() { // retirado a base da informação para gerar a cor aleatória do site https://www.codegrepper.com/code-examples/javascript/generate+random+rgb+color+javascript; usado no projeto pixels art também;
   function n() {
@@ -64,4 +65,8 @@ getColors.addEventListener('click', function (event){
   } else {
     resposta.innerHTML = 'Errou! Tente novamente!';
   }
+});
+
+getResetButton.addEventListener('click', function () {
+location.reload(); // recarrega a página retirado do site https://developer.mozilla.org/pt-BR/docs/Web/API/Location/reload
 });
