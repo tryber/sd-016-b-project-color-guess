@@ -4,3 +4,17 @@
   margin: 0;
   padding: 0;
 }
+
+.ball {
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+}
+
+#rgb-color {
+  margin-top: 100px;
+  
+}
