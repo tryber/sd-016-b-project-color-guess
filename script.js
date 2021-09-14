@@ -7,7 +7,8 @@ const user = {
 }
 
 const aswer = getOne('#answer'),
-      rightColor = getOne('#rgb-color');
+      rightColor = getOne('#rgb-color'),
+      score = getOne('#score');
 
 function randomizeColors() {
   return Math.floor(Math.random() * 255);
@@ -38,11 +39,15 @@ function selectRightColor() {
 }
 
 function getAswer() {
-  const possibleAnswers = ['Escolha uma cor', 'Acertou', 'Errou! Tente novamente'];
+  const possibleAnswers = ['Escolha uma cor', 'Acertou!', 'Errou! Tente novamente'];
 
   if (user.starting) {
     aswer.innerText = possibleAnswers[0];
     user.starting = false;
+  } else if (user.rightColor === user.choseColor) {
+    aswer.innerText = possibleAnswers[1];
+  } else {
+    aswer.innerText = possibleAnswers[2];
   }
 }
 
@@ -55,12 +60,22 @@ function saveChoseColor(event) {
 }
 
 function checkAnswer() {
-  return (user.rightColor === user.choseColor) ? user.score += 3 : user.score -= 1;
+  if (user.rightColor === user.choseColor) {
+    user.score += 3;
+  } else if (user.score > 0) {
+    user.score -= 1
+  }
+}
+
+function setScore() {
+  user.score < 0 ? score.innerText = 0 : score.innerText = user.score;
 }
 
 function bubbleBalls(event) {
   saveChoseColor(event);
   checkAnswer();
+  setScore();
+  getAswer();
 }
 
 function interactColors() {
