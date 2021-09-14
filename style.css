@@ -1,19 +1,19 @@
 header {
-    text-align: center;
-    margin-top: 4%;
+  text-align: center;
+  margin-top: 4%;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
 }
 
 .ball {
-    display: inline-flex;
-    border: 2px solid black;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin: 7px;
+  display: inline-flex;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 7px;
 }
