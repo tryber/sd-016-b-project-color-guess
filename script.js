@@ -1,5 +1,6 @@
 const user = {
   randomColor: [],
+  rightColor: '',
   starting: true,
   hit: false,
   points: 0,
@@ -27,6 +28,12 @@ function coloringBalls() {
   balls.forEach((ball, i) => {
     ball.style.backgroundColor = user.randomColor[i];
   });
+}
+
+function selectRightColor() {
+  const randomIndex = Math.floor(Math.random() * 6);
+
+  user.rightColor = user.randomColor[randomIndex];
 }
 
 function getAswer() {
