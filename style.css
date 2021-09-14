@@ -1,0 +1,50 @@
+body {
+    background-color: chocolate;
+    text-align: center;
+}
+
+#title {
+    text-align: center;
+    font-size: 50px;
+}
+
+#score {
+    margin-top: 0;
+    display: inline-block;
+    font-size: 35px;
+}
+#score-text {
+    margin-bottom: 0;
+    font-size: 25px;
+}
+#rgb-color {
+    font-size: 20px;
+}
+
+#answer {
+    font-size: 30px;
+}
+
+#color-palette {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+#reset-game {
+    color: darkblue;
+    border: solid 3px;
+    width: 80px;
+    height: 30px;
+    font-size: large;
+    background-color: coral;
+    border-radius: 20%;
+}
+.ball {
+    border: solid 3px;
+    margin-left: 10px;
+    border-radius: 100%;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
