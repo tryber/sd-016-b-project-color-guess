@@ -1,0 +1,22 @@
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(169, 226, 11);
+  display: inline-block;
+  margin: 3px;
+}
+
+body {
+  text-align: center;
+}
+
+#rgb-color {
+  margin: 0;
+}
+
+#placar,
+#pontos {
+  display: inline-block;
+  margin-top: 0;
+}
