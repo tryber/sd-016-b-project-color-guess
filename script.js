@@ -2,6 +2,8 @@ const balls = document.getElementsByClassName('ball');
 const colorToGuess = document.getElementById('rgb-color');
 const answerText = document.getElementById('answer');
 const resetGameButton = document.getElementById('reset-game');
+const score = document.getElementById('score');
+let counter = 0;
 
 function randomColor() {
   const r = parseInt(Math.random() * 255, 10);
@@ -24,12 +26,22 @@ function sortColor() {
 }
 sortColor();
 
+function resetGame() {
+  addBallsColor();
+  sortColor();
+  answerText.innerText = 'Escolha uma cor!';
+}
+
+resetGameButton.addEventListener('click', resetGame);
+
 function checkCorrectBall(e) {
   const bgColor = 'background-color';
   const checkClickedElement = window.getComputedStyle(e.target).getPropertyValue(bgColor);
   const checkRightColor = colorToGuess.innerText;
   if (checkClickedElement === checkRightColor) {
     answerText.innerText = 'Acertou!';
+    counter += 3;
+    score.innerText = counter;
   } else if (checkClickedElement !== checkRightColor) {
     answerText.innerText = 'Errou! Tente novamente!';
   }
@@ -41,14 +53,6 @@ function addEventToBalls() {
   }
 }
 addEventToBalls();
-
-function resetGame() {
-  addBallsColor();
-  sortColor();
-  answerText.innerText = 'Escolha uma cor!';
-}
-
-resetGameButton.addEventListener('click', resetGame);
 
 /* Referências:
 Gerar cor aleatória:
