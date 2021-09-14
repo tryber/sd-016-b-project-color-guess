@@ -53,7 +53,7 @@ function checkAnswer(evt) {
   }
 }
 
-function createBalls(max) {
+function createNewBalls(max) {
   const ballsContainer = document.getElementById('balls-container');
   populateColorsArray(max - 1);
   for (let i = 0; i < max; i += 1) {
@@ -65,7 +65,24 @@ function createBalls(max) {
   }
 }
 
-window.onload = () => {
+function resetAll() {
+  const ballsContainer = document.getElementById('balls-container');
+  ballsContainer.innerHTML = '';
+  for (let i = colors.length - 1; i >= 0; i -= 1) {
+    colors.pop();
+  }
+  const answer = document.getElementById('answer');
+  answer.innerText = 'Escolha uma cor';
+}
+
+function init() {
+  resetAll();
   getNewColor();
-  createBalls(6);
+  createNewBalls(6);
+}
+
+window.onload = () => {
+  init();
+  const resetGameButton = document.getElementById('reset-game');
+  resetGameButton.addEventListener('click', init);
 };
