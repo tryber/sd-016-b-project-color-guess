@@ -8,7 +8,7 @@ function pushColor(colorRGB) {
 function createColors(array) {
   for (let index = 0; index < array.length; index += 1) {
     const localizaDivs = document.querySelector('#colors-random');
-    let createDivsColor = document.createElement('div');
+    const createDivsColor = document.createElement('div');
     createDivsColor.className = 'ball';
     createDivsColor.style.backgroundColor = array[index];
     localizaDivs.appendChild(createDivsColor);
@@ -19,9 +19,9 @@ function randomColor() {
   const arrayColor = [];
   let colorSort = '';
   for (let index = 0; index < 6; index += 1) {
-    let r = Math.floor(Math.random() * 255);
-    let g = Math.floor(Math.random() * 255);
-    let b = Math.floor(Math.random() * 255);
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
 
     arrayColor.push(`rgb(${r}, ${g}, ${b})`);
     colorSort = arrayColor[Math.floor(Math.random() * arrayColor.length)];
@@ -37,7 +37,7 @@ function advinhaColor(event) {
   const addPoints = document.getElementById('score');
   if (event.target.style.backgroundColor === pegaCor.innerText) {
     trocaText.innerText = 'Acertou!';
-    soma = soma + 3;
+    soma += 3;
     addPoints.innerText = soma;
   } else {
     trocaText.innerText = 'Errou! Tente novamente!';
@@ -50,10 +50,10 @@ clickColor.addEventListener('click', advinhaColor);
 function resetGame() {
   const pegaQuadro = document.querySelector('#colors-random');
   pegaQuadro.innerHTML = '';
-  randomColor()
+  randomColor();
 }
 
-function resetTextIni(){
+function resetTextIni() {
   const mudaText = document.getElementById('answer');
   mudaText.innerText = 'Escolha uma cor';
 }
@@ -63,5 +63,3 @@ resetar.addEventListener('click', resetTextIni);
 
 const resetarGame = document.getElementById('reset-game');
 resetarGame.addEventListener('click', resetGame);
-
-

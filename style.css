@@ -1,8 +1,9 @@
-.colors-random{
-    display:inline-block;
+.colors-random {
+  display: inline-block;
 }
+
 .ball {
-    height:40px;
-    width:40px;
-    display:inline-block;
+  height: 40px;
+  width: 40px;
+  display: inline-block;
 }
