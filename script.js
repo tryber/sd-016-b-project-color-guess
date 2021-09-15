@@ -1,5 +1,6 @@
 const getBallsColor = document.getElementsByClassName('ball');
 const getResult = document.getElementById('rgb-color');
+const getButtonReset = document.getElementById('reset-game');
 
 // https://www.w3schools.com/js/js_random.asp
 function randomColor() {
@@ -32,3 +33,11 @@ function answer(event) {
 for (let i = 0; i < getBallsColor.length; i += 1) {
   getBallsColor[i].addEventListener('click', answer);
 }
+
+// ref: https://stackoverflow.com/questions/55127650/location-reloadtrue-is-deprecated
+function restartGame() {
+  window.location.reload();
+}
+
+getButtonReset.addEventListener('click', restartGame);
+
