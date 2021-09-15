@@ -1,6 +1,8 @@
 const getBallsColor = document.getElementsByClassName('ball');
 const getResult = document.getElementById('rgb-color');
 const getButtonReset = document.getElementById('reset-game');
+const getAnswer = document.getElementById('answer');
+const getScore = document.getElementById('score');
 
 // https://www.w3schools.com/js/js_random.asp
 function randomColor() {
@@ -20,14 +22,35 @@ function chooseColorAnswer() {
 
 chooseColorAnswer();
 
+function recoverScore() {
+  if (localStorage.getItem('score') === null) {
+    getScore.innerText = 0;
+  } else {
+    getScore.innerText = localStorage.getItem('score');
+  }
+  return getScore.innerText;
+}
+
+function score() {
+  let scoreGame = Number(recoverScore());
+  if (getAnswer.innerText === 'Acertou!') {
+    scoreGame += 3;
+  }
+  getScore.innerText = scoreGame;
+}
+function saveScore() {
+  localStorage.setItem('score', getScore.innerText);
+}
+
 function answer(event) {
-  const getAnswer = document.getElementById('answer');
   const colorSelected = event.target.style.backgroundColor;
   if (colorSelected === getResult.innerText) {
     getAnswer.innerText = 'Acertou!';
   } else {
     getAnswer.innerText = 'Errou! Tente novamente!';
   }
+  score();
+  saveScore();
 }
 
 for (let i = 0; i < getBallsColor.length; i += 1) {
@@ -41,3 +64,6 @@ function restartGame() {
 
 getButtonReset.addEventListener('click', restartGame);
 
+window.onload = function onload() {
+  recoverScore();
+};
