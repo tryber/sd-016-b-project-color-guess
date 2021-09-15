@@ -3,6 +3,7 @@ const getResult = document.getElementById('rgb-color');
 const getButtonReset = document.getElementById('reset-game');
 const getAnswer = document.getElementById('answer');
 const getScore = document.getElementById('score');
+const getResetPontuation = document.getElementById('reset-score');
 
 // https://www.w3schools.com/js/js_random.asp
 function randomColor() {
@@ -63,6 +64,12 @@ function restartGame() {
 }
 
 getButtonReset.addEventListener('click', restartGame);
+
+function restartScore() {
+  localStorage.setItem('score', 0);
+}
+
+getResetPontuation.addEventListener('click', restartScore);
 
 window.onload = function onload() {
   recoverScore();

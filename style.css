@@ -1,9 +1,39 @@
+body {
+  background-color:darkgrey;
+  font-family: Roboto Mono, monospace;
+  text-align: center;
+}
+
+body * {
+  background-color: black;
+  color: white;
+  width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+}
+
 .ball {
   border-radius: 50%;
   border: 1px solid black;
   display: inline-block;
   width: 100px;
   height: 100px;
+}
+
+button {
+  border-radius: 15px;
+  font-size: 15px;
+  width: 175px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 20px;
+  padding-bottom: 10px;
 }
 
 
