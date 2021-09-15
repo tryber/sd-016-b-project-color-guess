@@ -1,0 +1,29 @@
+header {
+  text-align: center;
+  margin-top: 4%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.ball {
+  display: inline-flex;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: 7px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+#reset-game {
+  display: block;
+  margin: 2% auto;
+}
