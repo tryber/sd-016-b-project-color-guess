@@ -23,4 +23,7 @@ h2 {
   justify-content: center;
 }
 
-
+#reset-game {
+  display: block;
+  margin: 2% auto;
+}

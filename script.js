@@ -28,12 +28,17 @@ function onLoad() {
 }
 window.onload = onLoad;
 
+let scoreCounter = 0;
 function match(event) {
   const p = document.getElementById('rgb-color').innerText;
   const eventTarget = event.target;
   const h2 = document.getElementById('answer');
+  const score = document.getElementById('score');
+
   if (eventTarget.style.backgroundColor === p) {
     h2.innerHTML = 'Acertou!';
+    scoreCounter += 3;
+    score.innerHTML = scoreCounter;
   } else {
     h2.innerHTML = 'Errou! Tente novamente!';
   }
@@ -43,5 +48,5 @@ for (let index = 0; index < ballClass.length; index += 1) {
   ballClass[index].addEventListener('click', match);
 }
 
-const resetButton = document.getElementById('reset-game')
+const resetButton = document.getElementById('reset-game');
 resetButton.addEventListener('click', onLoad);
