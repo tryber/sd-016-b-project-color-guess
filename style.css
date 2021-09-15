@@ -1,0 +1,57 @@
+.ball {
+  margin-right: 5px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  border: solid black 1px;
+  border-radius: 100%;
+}
+
+body {
+  font-family: monospace;
+  margin: 30px;
+  background: linear-gradient( rgb(235, 105, 207) , rgb(9 , 194 , 178));
+}
+
+section {
+  border-radius: 40px;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 50px;
+  background-color: white;
+  margin-top: 10%;
+  text-align: center;
+  
+}
+
+#rgb-color {
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+#all-colors {
+  display: inline-block;
+}
+
+#selected {
+  border: solid 2px black;
+}
+
+button {
+  background: linear-gradient( rgb(105, 235, 105) , rgb(9, 172, 194));
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: sans-serif;
+  font-size: 30px;
+  color: rgb(49, 48, 48);
+  
+}
