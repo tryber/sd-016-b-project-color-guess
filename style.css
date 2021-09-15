@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+}
+
+#color-ref {
+  background-color: grey;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.colors {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+#colors-random {
+  background-color: grey;
+  width: 500px;
+  height: 200px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
+}
