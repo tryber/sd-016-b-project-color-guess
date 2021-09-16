@@ -1,8 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap') ;
+
+* {
+  font-family: Poppins, sans-serif;
+  background-color: rgb(235, 233, 233);
+  margin: 0;
+  padding: 0;
+}
+
+.title-container {
+  margin-top: 20vh;
+  display: flex;
+  justify-content: center;
+}
+
+#title {
+  font-size: 40px;
+  color: rgb(241, 148, 148);
+}
+
+.rgb-color-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#rgb-color {
+  font-size: 20px;
+}
+
+#colors-option-container {
+  width: fit-content;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+
 .ball {
   border-radius: 100%;
   display: inline-flex;
   margin: 10px;
   height: 40px;
   width: 40px;
-  background-color: red;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.ball:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.text-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-container p {
+  font-size: 20px;
+  margin: 0 30px;
+}
+
+#reset-game {
+  font-size: 20px;
+  border-radius: 3%;
+  background-color: rgb(241, 148, 148);
+  padding: 10px;
+  width: 30%;
+  margin: 0 10px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+#reset-game:hover {
+  cursor: pointer;
+  background-color: rgb(230, 134, 134);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
