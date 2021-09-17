@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,6 @@ h1 , h2 {
   background-color: rgb(3, 107, 82);
   border-bottom: 7px solid rgb(47, 193, 140);
   display: flex;
-  /* margin: -8px -12px 5px; */
 }
 
 #title-container {
@@ -64,7 +63,6 @@ main {
   border-radius: 50%;
   margin: 1%;
   display: inline-block;
-  
 }
 
 #footer {
