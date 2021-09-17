@@ -54,8 +54,9 @@ body {
 }
 
 .header_h2 {
-  color: #244237;
-  font-size: 2.2rem;
+  color: rgb(36, 66, 55);
+  font-size: 3.6rem;
+  text-align: center;
 }
 
 .balls_content {
