@@ -6,27 +6,90 @@
 
 html {
   font-size: 62.5%;
+  font-family: 'Ubuntu';
 }
 
 body {
-  margin-top: 9rem;
   font-size: 2.4rem;
+  background-color: #e3f3ed;
 }
 
-#title {
-  font-size: 6.4rem;
+.header_gen {
+  width: 100%;
+  background-color: #104230;
 }
+
+.header_content {
+  display: flex;
+  width: 104rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_title {
+  color: #e4ebe9;
+  font-size: 5.8rem;
+  letter-spacing: 5px;
+}
+
+.header-img {
+  width: 70px;
+}
+
+.container {
+  width: 104rem;
+  margin: 2.2rem auto 0 auto;
+}
+
 #rgb-color {
-  font-size: 3.9rem;
+  font-size: 3.6rem;
+  text-align: center;
+  margin-top: 5.8rem;
+}
+
+.header_h3 {
+  color: #47d4ac;
+  font-size: 2.2rem;
+}
+
+.header_h2 {
+  color: #244237;
+  font-size: 2.2rem;
 }
 
 .balls_content {
-  padding-top: 5rem;
+  padding-top: 1.4rem;
+  display: flex;
+  width: 84rem;
+  justify-content: space-between;
+}
+
+.head2_sec {
+  margin-bottom: 3.6rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+.tech_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 84rem;
+  margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  width: 84rem;
+  margin: 2.2rem auto;
+  justify-content: center;
 }
 
 .ball {
-  background-color: rgb(12, 51, 85);
   border-radius: 50%;
-  width: 15rem;
-  height: 15rem;
+  width: 10rem;
+  height: 10rem;
 }
