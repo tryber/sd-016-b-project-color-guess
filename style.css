@@ -51,6 +51,9 @@ main {
   margin-top: 5%;
 }
 
+#score {
+  margin: 5%;
+}
 #ball-colors-container {
   font-size: 0;
   margin-top: 5%;
@@ -63,6 +66,10 @@ main {
   border-radius: 50%;
   margin: 1%;
   display: inline-block;
+}
+
+#answer {
+  margin: 5%;
 }
 
 #footer {
