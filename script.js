@@ -6,7 +6,7 @@ const c = parseInt(Math.random() * 255);
 
 // color[i].style.backgroundColor = `rgb(${a}, ${b}, ${c})`;
 
-let rgbColorText = `rgb(${a}, ${b}, ${c})`;
+let rgbColorText = `(${a}, ${b}, ${c})`;
 
 rgbColor.innerText = rgbColorText;
 
