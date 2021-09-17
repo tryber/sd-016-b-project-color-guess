@@ -19,3 +19,14 @@ body {
 #rgb-color {
   font-size: 3.9rem;
 }
+
+.balls_content {
+  padding-top: 5rem;
+}
+
+.ball {
+  background-color: rgb(12, 51, 85);
+  border-radius: 50%;
+  width: 15rem;
+  height: 15rem;
+}
