@@ -94,3 +94,56 @@ footer {
   width: 10rem;
   height: 10rem;
 }
+
+.ball:hover {
+  cursor: pointer;
+  border: 3px solid #244237;
+}
+
+.buttons_cont {
+  display: flex;
+  justify-content: center;
+}
+#reset-game {
+  width: 24rem;
+  height: 5.8rem;
+  font-size: 2.2rem;
+  border-radius: 2.2rem;
+  background-color: #6eccaa;
+  border: none;
+  box-shadow: 5px 5px 15px rgba(2, 46, 30, 0.507);
+}
+
+#reset-game:hover {
+  cursor: pointer;
+  background-color: #228f67;
+  color: #95ebca;
+}
+
+#reset-game:active {
+  box-shadow: 3px 3px 2px rgba(2, 46, 30, 0.637);
+}
+
+.score_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+#score {
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.582);
+  display: flex;
+  width: 10rem;
+  background-color: rgb(240, 130, 130);
+  height: 15rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  font-family: 'Bangers', cursive;
+  color: #062c1e;
+}
+
+.score_cont {
+  margin-left: 2rem;
+}

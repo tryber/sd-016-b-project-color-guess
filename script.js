@@ -23,23 +23,33 @@ function colorGen() {
   }
   ansSel.innerText = 'Escolha uma cor';
 }
+let count = 0;
+const scoreStorage = localStorage;
+scoreStorage.setItem('score', `${count}`);
 
 function verCor(event) {
   const ansSel = document.querySelector('#answer');
   const eTar = event.target;
   const corTar = eTar.style.backgroundColor;
   const rgbN = document.querySelector('#rgb-color').innerText;
+  const scoreH = document.querySelector('#score');
   if (corTar !== `rgb${rgbN}`) {
     ansSel.innerText = 'Errou! Tente novamente!';
+    if (count > 0) {
+      count -= 1;
+      scoreStorage.setItem('score', `${count}`);
+    }
+    scoreH.innerText = scoreStorage.getItem('score');
   } else {
     ansSel.innerText = 'Acertou!';
+    count += 3;
+    scoreStorage.setItem('score', `${count}`);
+    scoreH.innerText = count;
   }
-
-  console.log(`${corTar}`, typeof corTar);
-  console.log(`rgb${rgbN}`, typeof rgbN);
 }
 
 const ballCor = document.querySelector('.balls_content');
 ballCor.addEventListener('click', verCor);
-
+const btnRes = document.querySelector('#reset-game');
+btnRes.addEventListener('click', colorGen);
 window.onload = colorGen;
