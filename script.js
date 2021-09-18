@@ -1,4 +1,5 @@
 const colorsContainer = document.getElementById('colors-container');
+const rgb = document.querySelector('#rgb-color');
 function createBall() {
   for (let index = 0; index < 6; index += 1) {
     const colors = document.createElement('div');
@@ -23,7 +24,6 @@ function newColors() {
 newColors();
 
 function rgbText() {
-  const rgb = document.querySelector('#rgb-color');
   rgb.innerText = ball[parseInt(Math.random() * 5)].style.backgroundColor;
 }
 rgbText();
@@ -38,8 +38,7 @@ colorsContainer.addEventListener('click', (event) => {
 
 const result = document.getElementById('answer');
 function resultGame(event) {
-  const corCorreta = document.querySelector('#rgb-color');
-  if (event.target.style.backgroundColor === corCorreta.innerText) {
+  if (event.target.style.backgroundColor === rgb.innerText) {
     result.innerText = 'Acertou!';
   } else {
     result.innerText = 'Errou! Tente novamente!';
@@ -50,15 +49,17 @@ colorsContainer.addEventListener('click', resultGame);
 const buttonReset = document.getElementById('reset-game');
 
 buttonReset.addEventListener('click', (event) => {
-  event.target = newColors();
-  event.target = rgbText();
+  const evento = event.target;
+  const resetColor = newColors();
+  const resetText = rgbText();
+  evento.target = resetColor;
+  evento.target = resetText;
   result.innerText = 'Escolha uma cor';
 });
 let count = 0;
 function score(event) {
-  const corCorreta = document.querySelector('#rgb-color');
   const point = document.getElementById('score');
-  if (event.target.style.backgroundColor === corCorreta.innerText) {
+  if (event.target.style.backgroundColor === rgb.innerText) {
     count += 3;
   } else if (result.innerText === 'Errou! Tente novamente!' && count > 0) {
     count -= 1;
