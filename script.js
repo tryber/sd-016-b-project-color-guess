@@ -14,12 +14,17 @@ function creatColors() {
   const b = parseInt(Math.random() * 256, 10);
   return `rgb(${r},${g},${b})`;
 }
-
-
+const ball = document.querySelectorAll('.ball');
 function newColors() {
-  const ball = document.querySelectorAll('.ball');
   for (let index = 0; index < ball.length; index += 1) {
     ball[index].style.backgroundColor = creatColors();
   }
 }
 newColors();
+
+function rgbText() {
+  const ballColors = creatColors();
+  const rgb = document.querySelector('#rgb-color');
+  rgb.innerText = ballColors;
+}
+rgbText();
