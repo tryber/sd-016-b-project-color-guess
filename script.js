@@ -23,8 +23,48 @@ function newColors() {
 newColors();
 
 function rgbText() {
-  const ballColors = creatColors();
   const rgb = document.querySelector('#rgb-color');
-  rgb.innerText = ballColors;
+  rgb.innerText = ball[parseInt(Math.random() * 5)].style.backgroundColor;
 }
 rgbText();
+
+colorsContainer.addEventListener('click', (event) => {
+  const ballColors = document.getElementsByClassName('ball');
+  for (let index = 0; index < ballColors.length; index += 1) {
+    ballColors[index].classList.remove('answer');
+  }
+  event.target.classList.add('answer');
+});
+
+const result = document.getElementById('answer');
+function resultGame(event) {
+  const corCorreta = document.querySelector('#rgb-color');
+  if (event.target.style.backgroundColor === corCorreta.innerText) {
+    result.innerText = 'Acertou!';
+  } else {
+    result.innerText = 'Errou! Tente novamente!';
+  }
+}
+colorsContainer.addEventListener('click', resultGame);
+
+const buttonReset = document.getElementById('reset-game');
+
+buttonReset.addEventListener('click', (event) => {
+  event.target = newColors();
+  event.target = rgbText();
+  result.innerText = 'Escolha uma cor';
+});
+let count = 0;
+function score(event) {
+  const corCorreta = document.querySelector('#rgb-color');
+  const point = document.getElementById('score');
+  if (event.target.style.backgroundColor === corCorreta.innerText) {
+    count += 3;
+  } else if (result.innerText === 'Errou! Tente novamente!' && count > 0) {
+    count -= 1;
+  }
+  console.log(count);
+  point.innerText = count;
+}
+
+colorsContainer.addEventListener('click', score);
