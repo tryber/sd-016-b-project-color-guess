@@ -1,0 +1,10 @@
+.random-colors {
+    display: flex;
+}
+
+.ball {
+    border-radius: 50px;
+    height: 50px;
+    margin-left: 5px;
+    width: 50px;
+}
