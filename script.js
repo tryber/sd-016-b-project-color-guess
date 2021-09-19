@@ -1,19 +1,18 @@
-let balls = document.getElementsByClassName('ball');
-let rgbColor = document.getElementById('rgb-color');
-let ballIndex = Math.round(Math.random() * 5);
-let answer = document.getElementById('answer');
+const balls = document.getElementsByClassName('ball');
+const rgbColor = document.getElementById('rgb-color');
+const answer = document.getElementById('answer');
 
 function setColors() {
   for (let index = 0; index < balls.length; index += 1) {
-    let num1 = Math.round(Math.random() * 255);
-    let num2 = Math.round(Math.random() * 255);
-    let num3 = Math.round(Math.random() * 255);
+    const num1 = Math.round(Math.random() * 255);
+    const num2 = Math.round(Math.random() * 255);
+    const num3 = Math.round(Math.random() * 255);
 
     balls[index].style.backgroundColor = `rgb(${num1}, ${num2}, ${num3})`;
   }
 
-  let random = Math.round(Math.random() * 5);
-  let colorToGuess = window.getComputedStyle(balls[random]).getPropertyValue('background-color');
+  const random = Math.round(Math.random() * 5);
+  const colorToGuess = window.getComputedStyle(balls[random]).getPropertyValue('background-color');
   rgbColor.innerText = colorToGuess;
 
   answer.innerText = 'Escolha uma cor';
@@ -24,9 +23,9 @@ function setColors() {
 window.onload = setColors();
 
 function guessColor(event) {
-  let ballColor = window.getComputedStyle(event.target).getPropertyValue('background-color');
-  let score = document.getElementById('score');
-  let currentScore = parseInt(score.innerText);
+  const ballColor = window.getComputedStyle(event.target).getPropertyValue('background-color');
+  const score = document.getElementById('score');
+  const currentScore = parseInt(score.innerText, 10);
 
   if (rgbColor.innerText === ballColor) {
     answer.innerText = 'Acertou!';
