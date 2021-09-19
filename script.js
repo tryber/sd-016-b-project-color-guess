@@ -24,13 +24,13 @@ function sortColor() {
   }
 }
 
-let count = document.querySelector('#score');
+const count = document.querySelector('#score');
 
 function play() {
   sortColor();
   const selectedColor = rgbColorTextFunction();
   let x = parseInt(Math.random() * 6, 10);
-  if (x === 6) { x = 5 };
+  if (x === 6) { x = 5; }
   ballColorsContainer.children[x].style.backgroundColor = `rgb${selectedColor}`;
   console.log(x);
 }
@@ -40,7 +40,7 @@ function choice() {
     const yourChoice = event.target;
     if (yourChoice.style.backgroundColor === `rgb${rgbColor.innerText}`) {
       answer.innerText = 'Acertou!';
-      score.innerText = `Pontuação`;
+      score.innerText = 'Pontuação';
       count.innerText = +count.innerText + 3;
     } else {
       answer.innerText = 'Errou! Tente novamente!';
@@ -50,5 +50,5 @@ function choice() {
   });
 }
 
-window.onload = () => { play(); choice() };
+window.onload = () => { play(); choice(); };
 resetGame.addEventListener('click', play);
