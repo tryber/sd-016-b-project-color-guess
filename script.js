@@ -1,6 +1,7 @@
 const balls = document.getElementsByClassName('ball');
 const rgbColor = document.getElementById('rgb-color');
 const answer = document.getElementById('answer');
+const record = document.getElementById('record');
 
 function setColors() {
   for (let index = 0; index < balls.length; index += 1) {
@@ -16,11 +17,17 @@ function setColors() {
   rgbColor.innerText = colorToGuess;
 
   answer.innerText = 'Escolha uma cor';
-
   return answer;
 }
 
-window.onload = setColors();
+function getRecord(result) {
+  const latestRecord = localStorage.getItem('record');
+
+  if (result > latestRecord) {
+    localStorage.setItem('record', result);
+    record.innerText = result;
+  }
+}
 
 function guessColor(event) {
   const ballColor = window.getComputedStyle(event.target).getPropertyValue('background-color');
@@ -29,7 +36,10 @@ function guessColor(event) {
 
   if (rgbColor.innerText === ballColor) {
     answer.innerText = 'Acertou!';
-    score.innerText = currentScore + 3;
+    const result = currentScore + 3;
+    score.innerText = result;
+    getRecord(result);
+
   } else {
     answer.innerText = 'Errou! Tente novamente!';
     if (currentScore !== 0) {
@@ -43,3 +53,12 @@ for (let index = 0; index < balls.length; index += 1) {
 }
 
 document.getElementById('reset-game').addEventListener('click', setColors);
+
+function setRecord() {
+  record.innerText = localStorage.getItem('record');
+}
+
+window.onload = function() {
+  setColors();
+  setRecord();
+};

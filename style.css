@@ -1,5 +1,28 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  background-image: url(images/colorful-2174045_1280.png);
+  background-size: cover;
   text-align: center;
+}
+
+main {
+  border: 1px solid red;
+  /* align-items: center; */
+  display: flex;
+  justify-content: center;
+   min-height: 78vh;
+}
+
+#title {
+  color: rgb(212,181,106);
+  font-size: 40px;
+  padding: 20px;
+  text-transform: uppercase;
 }
 
 .ball {
@@ -8,4 +31,25 @@ body {
   height: 70px;
   border-radius: 100%;
   width: 70px;
+}
+
+.container {
+  color: rgb(231, 213, 213);
+  display: flex;
+  flex-direction: column;
+}
+
+.guess-container {
+  margin: 30px;
+}
+
+.balls-container {
+  display: flex;
+  margin: 20px;
+}
+
+footer {
+  background-color: rgb(242,67,73);
+  font-size: 0.7em;
+  padding: 20px;
 }
