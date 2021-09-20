@@ -1,0 +1,150 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: Ubuntu, sans-serif;
+}
+
+body {
+  font-size: 2.4rem;
+  background-color: rgb(227, 243, 237);
+}
+
+.header_gen {
+  width: 100%;
+  background-color: rgb(16, 66, 48);
+}
+
+.header_content {
+  display: flex;
+  width: 104rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_title {
+  color: rgb(228, 235, 233);
+  font-size: 5.8rem;
+  letter-spacing: 5px;
+}
+
+.header-img {
+  width: 70px;
+}
+
+.container {
+  width: 104rem;
+  margin: 2.2rem auto 0;
+}
+
+#rgb-color {
+  font-size: 3.6rem;
+  text-align: center;
+  margin-top: 5.8rem;
+}
+
+.header_h3 {
+  color: rgb(71, 212, 172);
+  font-size: 2.2rem;
+}
+
+.header_h2 {
+  color: rgb(36, 66, 55);
+  font-size: 3.6rem;
+  text-align: center;
+}
+
+.balls_content {
+  padding-top: 1.4rem;
+  display: flex;
+  width: 84rem;
+  justify-content: space-between;
+}
+
+.head2_sec {
+  margin-bottom: 3.6rem;
+}
+
+h4 {
+  font-size: 2.2rem;
+}
+
+.tech_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 84rem;
+  margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  width: 84rem;
+  margin: 2.2rem auto;
+  justify-content: center;
+}
+
+.ball {
+  border-radius: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.ball:hover {
+  cursor: pointer;
+  border: 3px solid rgb(36, 66, 55);
+}
+
+.buttons_cont {
+  display: flex;
+  justify-content: center;
+}
+
+#reset-game {
+  width: 24rem;
+  height: 5.8rem;
+  font-size: 2.2rem;
+  border-radius: 2.2rem;
+  background-color: rgb(110, 204, 170);
+  border: none;
+  box-shadow: 5px 5px 15px rgba(2, 46, 30, 0.507);
+}
+
+#reset-game:hover {
+  cursor: pointer;
+  background-color: rgb(34, 143, 103);
+  color: rgb(149, 235, 202);
+}
+
+#reset-game:active {
+  box-shadow: 3px 3px 2px rgba(2, 46, 30, 0.637);
+}
+
+.score_content {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  align-items: center;
+}
+
+#score {
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.582);
+  display: flex;
+  width: 10rem;
+  background-color: rgb(240, 130, 130);
+  height: 15rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  font-family: Bangers, cursive;
+  color: rgb(6, 44, 30);
+}
+
+.score_cont {
+  margin-left: 2rem;
+}
