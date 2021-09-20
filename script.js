@@ -55,7 +55,13 @@ for (let index = 0; index < balls.length; index += 1) {
 document.getElementById('reset-game').addEventListener('click', setColors);
 
 function setRecord() {
-  record.innerText = localStorage.getItem('record');
+  const lastRecord = localStorage.getItem('record');
+
+  if (lastRecord === null) {
+    record.innerText = 0;
+  } else {
+    record.innerText = lastRecord;
+  }
 }
 
 window.onload = function() {
