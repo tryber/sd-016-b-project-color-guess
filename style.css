@@ -1,0 +1,104 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url('images/colorful-2174045_1280.png');
+  background-size: cover;
+  color: rgb(212, 181, 106);
+  text-align: center;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+header {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+#title {
+  color: rgb(212, 181, 106);
+  font-size: 40px;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.ball {
+  border: 1px solid black;
+  border-radius: 100%;
+  display: inline-block;
+  height: 70px;
+  margin: 5px;
+  width: 70px;
+}
+
+.container {
+  color: rgb(238, 214, 158);
+  display: flex;
+  flex-direction: column;
+}
+
+.guess-container {
+  font-size: 30px;
+  margin: 30px;
+}
+
+.balls-container {
+  display: flex;
+  margin: 20px;
+}
+
+#answer {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+#reset-game {
+  background-color: rgb(242, 67, 73);
+  border: 2px solid rgb(242, 67, 73);
+  border-radius: 15px;
+  color: rgb(212, 181, 106);
+  font-weight: 600;
+  padding: 8px 20px;
+  text-transform: uppercase;
+}
+
+#reset-game:hover {
+  background-color: rgb(212, 181, 106);
+  color: rgb(242, 67, 73);
+  cursor: pointer;
+}
+
+.btn-container {
+  margin-bottom: 20px;
+}
+
+.score-container {
+  color: rgb(242, 67, 73);
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.score-container div {
+  margin: 10px 20px;
+}
+
+footer {
+  background-color: rgb(242, 67, 73);
+  font-size: 0.7em;
+  padding: 20px;
+}
+
+a {
+  color: rgb(212, 181, 106);
+  text-decoration: none;
+}
