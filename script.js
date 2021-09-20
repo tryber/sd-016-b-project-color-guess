@@ -33,21 +33,23 @@ function getPositionColor() {
 color = ball[getPositionColor()].style.backgroundColor;
 rgbColor.innerText = color;
 
-if (sessionStorage === null) {
-  score = sessionStorage.setItem('score', 0);
+if (localStorage.getItem('score') === null || localStorage.getItem('score') === false) {
+  score = localStorage.setItem('score', 0);
 } else {
-  score = parseInt(sessionStorage.getItem('score'));
+  localStorage.setItem('score', 0);
+  score = localStorage.getItem('score');
+  score = parseInt(score);
 }
 scoreText.innerText = `Placar: ${score}`;
 
 function selectedColor(event) {
   if (event.target.style.backgroundColor === color) {
-    // console.log('Acertou');
+    console.log('Acertou');
     score += 3;
-    sessionStorage.setItem('score', score);
+    localStorage.setItem('score', score);
     answer.innerText = 'Acertou!';
   } else {
-    // console.log('Errou!');
+    console.log('Errou!');
     answer.innerText = 'Errou! Tente novamente!';
   }
 }
@@ -57,8 +59,9 @@ for (let index = 0; index < ball.length; index += 1) {
 }
 
 resetGame.addEventListener('click', () => {
-  // sessionStorage.setItem('score', 0);
+  // localStorage.setItem('score', 0);
   // window.location.reload(true);
   answer.innerText = 'Escolha uma cor';
   generateColors();
+  color = ball[getPositionColor()].style.backgroundColor;
 });
