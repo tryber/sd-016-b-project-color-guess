@@ -39,7 +39,6 @@ function guessColor(event) {
     const result = currentScore + 3;
     score.innerText = result;
     getRecord(result);
-
   } else {
     answer.innerText = 'Errou! Tente novamente!';
     if (currentScore !== 0) {
@@ -64,7 +63,7 @@ function setRecord() {
   }
 }
 
-window.onload = function() {
+window.onload = function () {
   setColors();
   setRecord();
 };
