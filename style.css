@@ -1,0 +1,15 @@
+.random-colors {
+  display: flex;
+}
+
+.ball {
+  border-radius: 50px;
+  cursor: pointer;
+  height: 50px;
+  margin-left: 5px;
+  width: 50px;
+}
+
+#reset-game {
+  margin-top: 10px;
+}
