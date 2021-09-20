@@ -6,17 +6,17 @@
 
 html {
   font-size: 62.5%;
-  font-family: 'Ubuntu';
+  font-family: Ubuntu, sans-serif;
 }
 
 body {
   font-size: 2.4rem;
-  background-color: #e3f3ed;
+  background-color: rgb(227, 243, 237);
 }
 
 .header_gen {
   width: 100%;
-  background-color: #104230;
+  background-color: rgb(16, 66, 48);
 }
 
 .header_content {
@@ -28,7 +28,7 @@ body {
 }
 
 .header_title {
-  color: #e4ebe9;
+  color: rgb(228, 235, 233);
   font-size: 5.8rem;
   letter-spacing: 5px;
 }
@@ -39,7 +39,7 @@ body {
 
 .container {
   width: 104rem;
-  margin: 2.2rem auto 0 auto;
+  margin: 2.2rem auto 0;
 }
 
 #rgb-color {
@@ -49,7 +49,7 @@ body {
 }
 
 .header_h3 {
-  color: #47d4ac;
+  color: rgb(71, 212, 172);
   font-size: 2.2rem;
 }
 
@@ -97,27 +97,28 @@ footer {
 
 .ball:hover {
   cursor: pointer;
-  border: 3px solid #244237;
+  border: 3px solid rgb(36, 66, 55);
 }
 
 .buttons_cont {
   display: flex;
   justify-content: center;
 }
+
 #reset-game {
   width: 24rem;
   height: 5.8rem;
   font-size: 2.2rem;
   border-radius: 2.2rem;
-  background-color: #6eccaa;
+  background-color: rgb(110, 204, 170);
   border: none;
   box-shadow: 5px 5px 15px rgba(2, 46, 30, 0.507);
 }
 
 #reset-game:hover {
   cursor: pointer;
-  background-color: #228f67;
-  color: #95ebca;
+  background-color: rgb(34, 143, 103);
+  color: rgb(149, 235, 202);
 }
 
 #reset-game:active {
@@ -140,8 +141,8 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 10rem;
-  font-family: 'Bangers', cursive;
-  color: #062c1e;
+  font-family: Bangers, cursive;
+  color: rgb(6, 44, 30);
 }
 
 .score_cont {

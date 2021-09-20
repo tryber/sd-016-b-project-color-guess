@@ -1,7 +1,7 @@
-function gerar_cor() {
-  let r = parseInt(Math.random() * 255, 10);
-  let g = parseInt(Math.random() * 255, 10);
-  let b = parseInt(Math.random() * 255, 10);
+function gerarCor() {
+  const r = parseInt(Math.random() * 255, 10);
+  const g = parseInt(Math.random() * 255, 10);
+  const b = parseInt(Math.random() * 255, 10);
 
   return `(${r}, ${g}, ${b})`;
 }
@@ -13,7 +13,7 @@ function colorGen() {
   const ansSel = document.querySelector('#answer');
   const ballArr = [];
   for (let i = 0; i < ballClass.length; i += 1) {
-    ballArr.push(gerar_cor());
+    ballArr.push(gerarCor());
   }
   const numAle = Math.floor(Math.random() * 6);
   const numGer = ballArr[numAle];
