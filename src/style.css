@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap') ;
 
 body {
   background-color: white;
@@ -65,7 +65,7 @@ li:hover {
 
 button {
   font-size: 1em;
-  font-weight: bold;
+  font-weight: 600;
   margin: 5px;
   padding: 16px;
   box-shadow: 3px rgba(128, 128, 128, 0.082);

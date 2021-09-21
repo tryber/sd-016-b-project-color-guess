@@ -8,7 +8,7 @@ function criaCor() {
 }
 
 function displayScore() {
-  const placarPlac = document.querySelector('.display');
+  const placarPlac = document.querySelector('.placarAtual');
   const placar = document.createElement('p')
   placar.id = 'score';
   placar.classList.add('placarStyle')
@@ -26,8 +26,6 @@ function colorPlate() {
     locat.appendChild(colorCirc);
   };
 }
-
-colorPlate();
 
 function colorWin() {
   const options = document.querySelectorAll('li');
@@ -53,9 +51,50 @@ function resultado() {
   locatX.appendChild(results);
 }
 
-rgbAlvo();
+function newGamer() {
+  colorPlate(); rgbAlvo();
+  displayScore(); resultado();
+}
 
-displayScore();
+newGamer()
 
-resultado();
+function resetRGB() {
+  const div = document.querySelector('.display');
+  div.innerHTML = ''; rgbAlvo();
+}
 
+
+function newScore() {
+  const old = document.querySelector('.placarAtual');
+  old.innerHTML = '';
+  score.placar = score.placar + 3;
+  return displayScore();
+}
+
+function clerAll() {
+  const old = document.querySelector('.placarAtual');
+  old.innerHTML = '';
+  const locUL = document.querySelector('ul');
+  locUL.innerHTML = '';
+  const rgbAtual = document.querySelector('.display');
+  rgbAtual.innerHTML = '';
+  const result = document.querySelector('.result');
+  result.innerHTML = '';
+}
+
+function resetColor() {
+  const locUL = document.querySelector('ul');
+  locUL.innerHTML = '';
+  colorPlate(); resetRGB()
+}
+
+function reserGamer() {
+  clerAll();
+  newGamer();
+}
+
+const btnColorReset = document.querySelector('#reset-colors');
+btnColorReset.addEventListener('click', resetColor);
+
+const btnResetGamer = document.querySelector('#reset-game');
+btnResetGamer.addEventListener('click', reserGamer);
