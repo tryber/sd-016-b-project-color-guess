@@ -1,0 +1,32 @@
+main {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+section {
+  justify-content: center;
+  text-align: center;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+ul {
+  display: inline;
+}
+
+li {
+  display: inline-block;
+}
+
+.ball {
+
+}
+
+.placarStyle {
+  padding: 10px;
+}
