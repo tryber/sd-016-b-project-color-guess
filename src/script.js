@@ -7,8 +7,36 @@ function criaCor() {
   return `rgb( ${r}, ${g}, ${b} )`;
 }
 
+function displayScore() {
+  const placarPlac = document.querySelector('.display');
+  const placar = document.createElement('p')
+  placar.id = 'score';
+  placar.classList.add('placarStyle')
+  placar.innerText = `Placar: ${ score.placar }` ;
+  placarPlac.appendChild(placar);
+}
+
+function colorPlate() {
+  const locat = document.querySelector('ul');
+  for (let ind = 0; ind < 6; ind += 1) {
+    const rgb = criaCor();
+    const colorCirc = document.createElement('li');
+    colorCirc.className = 'ball';
+    colorCirc.style.backgroundColor = `${rgb}`
+    locat.appendChild(colorCirc);
+  };
+}
+
+colorPlate();
+
+function colorWin() {
+  const options = document.querySelectorAll('li');
+  const sort = Math.floor(Math.random() * 6);
+  return options[sort].style.backgroundColor;
+}
+
 function rgbAlvo() {
-  const corTmp = criaCor();
+  const corTmp = colorWin();
   const locateColor = document.querySelector('.display');
   const newColor = document.createElement('p')
   newColor.id = 'rgb-color';
@@ -16,26 +44,18 @@ function rgbAlvo() {
   newColor.innerHTML = `${ corTmp }` ;
   locateColor.appendChild(newColor);
 }
+
+function resultado() {
+  const locatX = document.querySelector('.result');
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Escolha uma cor'
+  locatX.appendChild(results);
+}
+
 rgbAlvo();
 
-function displayScore() {
-  const placarPlac = document.querySelector('.display');
-  const placar = document.createElement('p')
-  placar.id = 'scoreID';
-  placar.classList.add('placarStyle')
-  placar.innerText = `Placar: ${ score.placar }` ;
-  placarPlac.appendChild(placar);
-}
 displayScore();
 
-function colorPlate() {
-  const locat = document.querySelector('ul');
-  for (let ind = 0; ind < 6; ind += 1) {
-    const rgb = criaCor();
-    const colorCirc = document.createElement('li');
-    colorCirc.classList.add = 'ball';
-    colorCirc.style.backgroundColor = `${rgb}`
-    locat.appendChild(colorCirc);
-  };
-}
-colorPlate();
+resultado();
+
