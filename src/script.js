@@ -63,7 +63,6 @@ function resetRGB() {
   div.innerHTML = ''; rgbAlvo();
 }
 
-
 function newScore() {
   const old = document.querySelector('.placarAtual');
   old.innerHTML = '';
@@ -91,6 +90,24 @@ function resetColor() {
 function reserGamer() {
   clerAll();
   newGamer();
+}
+
+function nice() {
+  const atual = document.querySelector('.result');
+  atual.innerHTML = '';
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Acertou!'
+  atual.appendChild(results);
+}
+
+function deined() {
+  const atual = document.querySelector('.result');
+  atual.innerHTML = '';
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Errou! Tente novamente!'
+  atual.appendChild(results);
 }
 
 const btnColorReset = document.querySelector('#reset-colors');
