@@ -7,13 +7,42 @@ function criaCor() {
   return `rgb( ${r}, ${g}, ${b} )`;
 }
 
-function displayScore() {
-  const placarPlac = document.querySelector('.placarAtual');
-  const placar = document.createElement('p')
-  placar.id = 'score';
-  placar.classList.add('placarStyle')
-  placar.innerText = `Placar: ${ score.placar }` ;
-  placarPlac.appendChild(placar);
+function nice() {
+  const atual = document.querySelector('.result');
+  atual.innerHTML = '';
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Acertou!'
+  atual.appendChild(results); newScore();
+  nextGamer();
+}
+
+function deined() {
+  const atual = document.querySelector('.result');
+  atual.innerHTML = '';
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Errou! Tente novamente!'
+  atual.appendChild(results);
+  nextGamer();
+}
+
+function resultado() {
+  const locatX = document.querySelector('.result');
+  const results = document.createElement('h1');
+  results.id = 'answer';
+  results.innerText = 'Escolha uma cor'
+  locatX.appendChild(results);
+}
+
+function testGame(event) {
+  const circle = event.target.style.backgroundColor;
+  const atualRGB = document.querySelector('.placarStyle').innerText;
+  if (circle === atualRGB) {
+    return nice();
+  } else {
+    return deined();
+  }
 }
 
 function colorPlate() {
@@ -23,6 +52,7 @@ function colorPlate() {
     const colorCirc = document.createElement('li');
     colorCirc.className = 'ball';
     colorCirc.style.backgroundColor = `${rgb}`
+    colorCirc.addEventListener('click', testGame);
     locat.appendChild(colorCirc);
   };
 }
@@ -43,12 +73,13 @@ function rgbAlvo() {
   locateColor.appendChild(newColor);
 }
 
-function resultado() {
-  const locatX = document.querySelector('.result');
-  const results = document.createElement('h1');
-  results.id = 'answer';
-  results.innerText = 'Escolha uma cor'
-  locatX.appendChild(results);
+function displayScore() {
+  const placarPlac = document.querySelector('.placarAtual');
+  const placar = document.createElement('p')
+  placar.id = 'score';
+  placar.classList.add('placarStyle')
+  placar.innerText = `Placar: ${ score.placar }` ;
+  placarPlac.appendChild(placar);
 }
 
 function newGamer() {
@@ -70,13 +101,17 @@ function newScore() {
   return displayScore();
 }
 
-function clerAll() {
-  const old = document.querySelector('.placarAtual');
-  old.innerHTML = '';
+function newRound() {
   const locUL = document.querySelector('ul');
   locUL.innerHTML = '';
   const rgbAtual = document.querySelector('.display');
   rgbAtual.innerHTML = '';
+}
+
+function clerAll() {
+  newRound();
+  const old = document.querySelector('.placarAtual');
+  old.innerHTML = '';
   const result = document.querySelector('.result');
   result.innerHTML = '';
 }
@@ -92,22 +127,8 @@ function reserGamer() {
   newGamer();
 }
 
-function nice() {
-  const atual = document.querySelector('.result');
-  atual.innerHTML = '';
-  const results = document.createElement('h1');
-  results.id = 'answer';
-  results.innerText = 'Acertou!'
-  atual.appendChild(results);
-}
-
-function deined() {
-  const atual = document.querySelector('.result');
-  atual.innerHTML = '';
-  const results = document.createElement('h1');
-  results.id = 'answer';
-  results.innerText = 'Errou! Tente novamente!'
-  atual.appendChild(results);
+function nextGamer() {
+  newRound(); colorPlate(); rgbAlvo();
 }
 
 const btnColorReset = document.querySelector('#reset-colors');
