@@ -1,0 +1,42 @@
+button{
+  width: 200px;
+  height: 40px;
+  align-self: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+header h1 {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+#ball-container {
+  display: flex;
+  justify-content: center;
+}
+
+#rgb-color {
+  display: flex;
+  justify-content: center;
+}
+
+.ball {
+  border: 1px solid red;
+  border-radius: 50%;
+  margin-left: 5px;
+  width: 70px;
+  height: 70px;
+}
+
