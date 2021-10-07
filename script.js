@@ -1,6 +1,6 @@
 const colorBalls = document.querySelectorAll('.ball');
 const colorGuess = document.querySelector('#rgb-color');
-const answer = document.querySelector('answer');
+const answer = document.querySelector('#answer');
 
 function generateColorBallRandom() {
   for (let index = 0; index < colorBalls.length; index += 1) {
@@ -22,3 +22,18 @@ generateGuessColor();
 // Substr - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr
 // Foi utilizado para retirar o rgb do texto e deixar apenas os números.
 
+function changeAnswer(event) {
+  if (event.target.style.backgroundColor.substr(3) === colorGuess.innerHTML) {
+    answer.innerHTML = 'Acertou!';
+  } else {
+    answer.innerHTML = 'Errou! Tente novamente!';
+  }
+}
+
+document.addEventListener('click', (event) => {
+  for (let index = 0; index < colorBalls.length; index += 1) {
+    if (event.target === colorBalls[index]) {
+      changeAnswer(event);
+    }
+  }
+});
