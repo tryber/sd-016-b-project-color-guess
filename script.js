@@ -1,4 +1,6 @@
 const colorBalls = document.querySelectorAll('.ball');
+const colorGuess = document.querySelector('#rgb-color');
+const answer = document.querySelector('answer');
 
 function generateColorBallRandom() {
   for (let index = 0; index < colorBalls.length; index += 1) {
@@ -10,3 +12,13 @@ function generateColorBallRandom() {
 }
 
 generateColorBallRandom();
+
+function generateGuessColor() {
+  const randomCircle = Math.floor(Math.random() * 6);
+  colorGuess.innerHTML = colorBalls[randomCircle].style.backgroundColor.substr(3);
+}
+
+generateGuessColor();
+// Substr - https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+// Foi utilizado para retirar o rgb do texto e deixar apenas os números.
+
