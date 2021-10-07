@@ -2,6 +2,7 @@ const colorBalls = document.querySelectorAll('.ball');
 const colorGuess = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
 const reset = document.querySelector('#reset-game');
+const score = document.querySelector('#score');
 
 function generateColorBallRandom() {
   for (let index = 0; index < colorBalls.length; index += 1) {
@@ -26,10 +27,14 @@ generateGuessColor();
 function changeAnswer(event) {
   if (event.target.style.backgroundColor.substr(3) === colorGuess.innerHTML) {
     answer.innerHTML = 'Acertou!';
+    score.innerHTML = parseInt(score.innerHTML, 10) + 3;
   } else {
     answer.innerHTML = 'Errou! Tente novamente!';
+    score.innerHTML = parseInt(score.innerHTML, 10) - 1;
   }
 }
+
+// Parseint - irá transfornar a string do inner.Html para um inteiro. https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 
 // Tentei utilizar ternary operator, porém o linter reclama no número de caracteres na linha.
 
