@@ -1,6 +1,7 @@
 const colorBalls = document.querySelectorAll('.ball');
 const colorGuess = document.querySelector('#rgb-color');
 const answer = document.querySelector('#answer');
+const reset = document.querySelector('#reset-game');
 
 function generateColorBallRandom() {
   for (let index = 0; index < colorBalls.length; index += 1) {
@@ -39,3 +40,11 @@ document.addEventListener('click', (event) => {
     }
   }
 });
+
+function resetGame() {
+  generateColorBallRandom();
+  generateGuessColor();
+  answer.innerHTML = 'Escolha uma cor';
+}
+
+reset.addEventListener('click', resetGame);
