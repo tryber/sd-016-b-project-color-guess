@@ -30,6 +30,8 @@ function changeAnswer(event) {
   }
 }
 
+// Tentei utilizar ternary operator, porém o linter reclama no número de caracteres na linha.
+
 document.addEventListener('click', (event) => {
   for (let index = 0; index < colorBalls.length; index += 1) {
     if (event.target === colorBalls[index]) {

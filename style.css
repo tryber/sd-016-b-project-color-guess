@@ -14,3 +14,8 @@ body {
 h1 , h2 {
   font-family: monospace;
 }
+
+#reset-game {
+  border-radius: 10px;
+  padding: 8px;
+}
