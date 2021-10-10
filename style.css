@@ -1,0 +1,39 @@
+#title {
+  text-align: center;
+}
+
+#rgb-color {
+  font-size: xx-large;
+  text-align: center;
+}
+
+#container-ball {
+  text-align: center;
+}
+
+#answer {
+  font-size: xx-large;
+  font-weight: 800;
+  text-align: center;
+}
+
+#container-button-reset {
+  font-size: xx-large;
+  font-weight: 700;
+  text-align: center;
+}
+
+#score {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: 700;
+  color: red;
+}
+
+.ball {
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}

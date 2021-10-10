@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Adivinhe a Cor</title>
+</head>
+<body>
+    <h1 id="title">Advinhe a cor! </h1>
+
+    <p id="rgb-color">(168, 34, 1)</p>
+
+    <p id="score"></p>
+    <!--Adicionei um tags section que possui um valor semantico
+    para as divisões internas da section coloquei divs pois não
+    possui valor semântico porém casa muito bem com a estrutura 
+    pedida no problema  
+    -->
+    <section id="container-ball">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </section>
+      <section>
+        <p id="answer">Escolha uma cor</p>
+      </section>
+
+    <section id="container-button-reset">
+      <button id="reset-game">Reset</button>
+    </section>
+
+<script src="script.js"></script>
+</body>
+</html>
