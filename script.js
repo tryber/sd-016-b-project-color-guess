@@ -2,8 +2,13 @@ function sorteia() {
   document.querySelector('#rgb-color').innerText = `(${168}, ${34}, ${1})`;
 }
 
-function configurar() {
+function reset() {
+  document.querySelector('#answer').innerText = 'Escolha uma Cor';
   sorteia();
+}
+
+function configurar() {
+  reset();
 }
 
 window.onload = configurar;
