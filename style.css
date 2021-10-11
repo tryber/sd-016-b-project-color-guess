@@ -2,4 +2,10 @@ body {
   background-color: steelblue;
 }
 
+.bola {
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+}
+
 /* deixar uma linha para o linter ficar ok */
