@@ -14,4 +14,12 @@ body {
   display: flex;
 }
 
+#bolas {
+  display: flex;
+}
+
+#resposta {
+  display: flex;
+}
+
 /* deixar uma linha para o linter ficar ok */
