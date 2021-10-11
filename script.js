@@ -31,8 +31,8 @@ function apresentaBolas() {
 }
 
 function reset() {
+  document.querySelector('#answer').innerText = 'Escolha uma cor';
   apresentaBolas();
-  document.querySelector('#answer').innerText = 'Escolha uma Cor';
 }
 
 function guess(e) {
@@ -43,7 +43,7 @@ function guess(e) {
       resp.innerText = 'Acertou!';
       const pont = document.querySelector('#score');
       pont.innerText = +pont.innerText + 3;
-      reset();
+      apresentaBolas();
     } else {
       resp.innerText = 'Errou! Tente novamente!';
       document.querySelector('#score').innerText = 0;
