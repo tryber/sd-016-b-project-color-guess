@@ -1,0 +1,17 @@
+body {
+  background-color: steelblue;
+}
+
+.ball {
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  border: 2px grey solid;
+  box-shadow: purple 2px 2px 4px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+/* deixar uma linha para o linter ficar ok */
