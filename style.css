@@ -10,15 +10,7 @@ body {
   box-shadow: purple 2px 2px 4px;
 }
 
-#placar {
-  display: flex;
-}
-
-#bolas {
-  display: flex;
-}
-
-#resposta {
+.flex-container {
   display: flex;
 }
 
