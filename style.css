@@ -28,3 +28,18 @@ main {
   text-align: center;
   font-size: 20px;
 }
+
+#section-ball {
+  display: flex;
+  justify-content: space-between;
+  padding: 75px;
+}
+
+.ball {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border: 2px solid black;
+  margin-right: 30px;
+  border-radius: 50%;
+}
