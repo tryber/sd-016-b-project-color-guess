@@ -39,7 +39,12 @@ main {
   display: inline-block;
   width: 60px;
   height: 60px;
-  border: 2px solid black;
   margin-right: 30px;
   border-radius: 50%;
+  border: 3px dashed black;
+  cursor: pointer;
+}
+
+#answer {
+  text-align: center;
 }
