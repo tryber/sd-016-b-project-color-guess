@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(110, 110, 110);
+}
+
+main {
+  position: relative;
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+  background-color: white;
+  margin-top: 10%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#title {
+  text-align: center;
+}
+
+#rgb-color {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 20px;
+}
+
+#section-ball {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.ball {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  margin-right: 30px;
+  border-radius: 50%;
+  border: 3px dashed black;
+  cursor: pointer;
+}
+
+#answer {
+  text-align: center;
+}
+
+#section-button {
+  text-align: center;
+}
+
+#reset-game {
+  display: inline;
+  width: 150px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#score {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
+}
