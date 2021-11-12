@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -10,6 +9,7 @@ body {
 }
 
 main {
+  position: relative;
   width: 1000px;
   height: 500px;
   margin: auto;
@@ -32,7 +32,7 @@ main {
 #section-ball {
   display: flex;
   justify-content: space-between;
-  padding: 75px;
+  padding: 50px;
 }
 
 .ball {
@@ -47,4 +47,22 @@ main {
 
 #answer {
   text-align: center;
+}
+
+#section-button {
+  text-align: center;
+}
+
+#reset-game {
+  display: inline;
+  width: 150px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#score {
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 700;
 }
