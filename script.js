@@ -25,8 +25,6 @@ const randomRGB = () => Math.trunc(Math.random() * 255) + 1;
 const makeRGBColor = () =>
   `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
 
-// count += 3;
-// score.textContent = `Placar: ${count}`;
 const makeBalls = () => {
   guessColor.textContent = makeRGBColor();
   const arr = [
@@ -45,7 +43,7 @@ const makeBalls = () => {
 
 const countScore = (params) => {
   count += params;
-  score.textContent = count;
+  score.textContent = `Placar: ${count}`;
 };
 
 const selectBalls = () => {
