@@ -41,7 +41,19 @@ circles.addEventListener('click', function(event) {
   if (event.target.id == 'correct') {
     feedback.innerText = 'Acertou!';
     score.innerText = (parseInt(score.innerText) + 3);
-  } else feedback.innerText = 'Errou! Tente novamente!';
+    rgb.innerText = generateColor();
+    for (let index = 0; index < 6; index++) {
+      balls.children[index].id = '';
+    }
+    putColors();
+  } else {
+    feedback.innerText = 'Errou! Tente novamente!';
+    rgb.innerText = generateColor();
+    for (let index = 0; index < 6; index++) {
+      balls.children[index].id = '';
+    }
+    putColors();
+  }
 })
 
 
