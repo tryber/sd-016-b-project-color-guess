@@ -57,20 +57,24 @@ const createScore = () => {
   score.innerText = 'Placar: 0';
 };
 
-const createEventListener = () => {
+const teste = (index) => {
   const colorContainer = document.getElementById('colors-container');
   const winnerMessage = document.getElementsByClassName('message');
   const score = document.getElementById('score');
+  colorContainer.children[index].addEventListener('click', () => {
+    if (colorContainer.children[index].style.backgroundColor === sortedColor) {
+      winnerMessage[0].innerText = 'Acertou!';
+      countScore += 3;
+      score.innerText = `Placar: ${countScore}`;
+    } else {
+      winnerMessage[0].innerText = 'Errou! Tente novamente!';
+    }
+  });
+};
+
+const createEventListener = () => {
   for (let index = 0; index < 6; index += 1) {
-    colorContainer.children[index].addEventListener('click', () => {
-      if (colorContainer.children[index].style.backgroundColor === sortedColor) {
-        winnerMessage[0].innerText = 'Acertou!';
-        countScore += 3;
-        score.innerText = `Placar: ${countScore}`;
-      } else {
-        winnerMessage[0].innerText = 'Errou! Tente novamente!';
-      }
-    });
+    teste(index);
   }
 };
 
